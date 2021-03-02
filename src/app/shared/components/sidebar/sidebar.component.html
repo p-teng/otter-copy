@@ -1,32 +1,57 @@
-<mat-nav-list>
-    <div class="profile-card">
+<mat-nav-list style="margin-top: -12px">
+    <div class="profile-card nav-item">
+        <img src="/assets/headshot.png">
         <div class="header">
-            <h2>Soufiane FADIL</h2>
-            <h4>example@email.com</h4>
+            <p style="margin-top: 5px; text-align: left; margin-left: 15px">Phillip Teng
+                <br>
+                pteng14@email.com</p>
         </div>
-        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">
+        
     </div>
 
-    <mat-divider></mat-divider>
-
-    <h2 matSubheader>Pages</h2>
-
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">Posts</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">Articles</a>
-
-    <mat-divider></mat-divider>
-
-    <h2 matSubheader>Tools</h2>
-
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>import_contacts</mat-icon>
-        Contacts
+    <mat-divider style="margin-top: -20px;"></mat-divider>
+    <a class="nav-item-active" mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <mat-icon>home</mat-icon>
+        Home
+    </a>
+    <a class="nav-item" mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+        <mat-icon>volume_up</mat-icon>
+        My Conversations
+    </a>
+    <a class="nav-item" mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+        <mat-icon>group</mat-icon>
+        Shared with Me
+    </a>
+    <a class="nav-item" mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+        <mat-icon>apps</mat-icon>
+        Apps
     </a>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>contact_phone</mat-icon>
-        Leads
-    </a>
+    <mat-divider style="background-color: #808080;"></mat-divider>
 
+    <a class="nav-item" mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <p style="width: 100px">GROUPS</p>
+        <mat-icon style="margin-left: 230px">add_box</mat-icon>
+    </a>
+    <mat-divider style="background-color: #808080;"></mat-divider>
+    <a class="nav-item" mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <p style="width: 100px">FOLDERS</p>
+        <mat-icon style="margin-left: 224px">add_box</mat-icon>
+    </a>
+    <div style="height: 200px; width: 349px; background-color: #05294b"></div>
+    <mat-divider style="background-color: #808080;"></mat-divider>
+    <a class="nav-item" mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>my_library_books</mat-icon>
+        All Conversations
+    </a>
+    <a class="nav-item" mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>delete</mat-icon>
+        Trash    
+    </a>
+    <a class="nav-item" style="padding-bottom: 20px" mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <img src="assets/logo.png" style="width: 80px; padding-right: 10px">
+        <p style="font-size: 18px;">
+            Otter.ai    
+        </p>
+    </a>
 </mat-nav-list>

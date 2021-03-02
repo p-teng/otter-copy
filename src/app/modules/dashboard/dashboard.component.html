@@ -1,76 +1,104 @@
-<div>
-    <app-widget-area [data]="bigChart"></app-widget-area>
-</div>
-
-<br>
-
-<mat-divider></mat-divider>
-
-<br>
-
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <mat-card fxFlex="25">
-        <app-widget-card label="New Users" total="12k" percentage="50" [data]="cards"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card label="Users retention" total="10k" percentage="40" [data]="cards"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card label="Users engagement" total="8k" percentage="30" [data]="cards"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card label="Referral" total="6k" percentage="20" [data]="cards"></app-widget-card>
-    </mat-card>
-</div>
-
-<br>
-
-<mat-divider></mat-divider>
-
-<br>
-
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
-    <div fxFlex="60">
-        <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="dataSource">
-
-                <!-- Position Column -->
-                <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef> No. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-                </ng-container>
-
-                <!-- Name Column -->
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef> Name </th>
-                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                </ng-container>
-
-                <!-- Weight Column -->
-                <ng-container matColumnDef="weight">
-                    <th mat-header-cell *matHeaderCellDef> Weight </th>
-                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-                </ng-container>
-
-                <!-- Symbol Column -->
-                <ng-container matColumnDef="symbol">
-                    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-
-            <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+<div fxLayout >
+    <div style="width: 60%; margin-right: 5%; margin-top: -20px">
+        <h3 style="text-align: center; font-weight: normal; margin-left: 50px">Home</h3>
+        <h2 style="margin-left: 10%; font-weight: normal">
+            Agenda Today
+        </h2>
+        <div style="margin-left: 10%; display: flex; flex-direction: row;">
+            <mat-card style="width: 20%; margin-left: 15px; border-radius: 15px">
+                <mat-card-content>
+                    <p>Daily Stand-up</p>
+                    <p style="color: #303030">8-8:30AM</p>
+                    <img src="/assets/headshot.png"
+                        style="width: 35px; height: 35px; border-radius: 50%; margin-top: 10px">
+                </mat-card-content>
+            </mat-card>
+            <mat-card style="width: 20%;  margin-left: 15px; border-radius: 15px">
+                <mat-card-content>
+                    <p>Otter Interview</p>
+                    <p style="color: #303030">2-2:45PM</p>
+                    <img src="/assets/headshot.png"
+                        style="width: 35px; height: 35px; border-radius: 50%; margin-top: 10px">
+                </mat-card-content>
+            </mat-card>
         </div>
 
+        <h2 style="margin-left: 10%; font-weight: normal">
+            Recent Activity
+        </h2>
+        <mat-card style="margin-left: 80px; cursor: pointer">
+            <div style="display: flex; flex-direction: row;">
+                <img src="/assets/otter-profile.jpg"
+                    style="width: 60px; height: 60px; border-radius: 50%; margin-top: 10px;">
+                <div>
+                    <p class="activity" style="font-size: 16px; margin-top: 25px; margin-left: 20px">
+                        <b>Note</b> is ready
+                    </p>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; margin-top: 20px">
+                
+                <img src="/assets/otter-profile.jpg"
+                    style="width: 60px; height: 60px; border-radius: 50%; margin-top: 10px;">
+                <div>
+                    <p class="activity" style="font-size: 16px; margin-top: 25px; margin-left: 20px">
+                        <b>Note</b> is ready
+                    </p>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; margin-top: 20px">
+                <img src="/assets/otter-profile.jpg"
+                    style="width: 60px; height: 60px; border-radius: 50%; margin-top: 10px;">
+                <div>
+                    <p class="activity" style="font-size: 16px; margin-top: 25px; margin-left: 20px">
+                        <b>Note</b> is ready
+                    </p>
+                </div>
+            </div>
+        </mat-card>
     </div>
-    <div fxFlex="40">
-        <app-widget-pie [data]="pieChart"></app-widget-pie>
+    <div>
+        <div style="margin-left: 40px; background-color: #F0F0F0; padding-left: 20px; padding-right: 120px; padding-top: 0px; padding-bottom: 0px; border-radius: 10px; height: 60px">
+            <mat-form-field appearance="filled" style="width: 130%">
+                <input matInput placeholder="Search conversations...">
+            </mat-form-field>
+        </div>
+        <div style="margin-top: 30px; display: flex; flex-direction: row;">
+            <button mat-raised-button 
+                style="background-color: #126fd6; 
+                color: white; border-radius: 40px; padding-left: 20px; padding-right: 20px; height: 50px;">
+                <p style="font-size: 16px; padding-left: 40px; padding-right: 40px; margin-top: 7px">Record</p>
+            </button>
+            <button mat-raised-button 
+                style="border: 1px solid #126fd6; margin-left: 20px;
+                color: white; border-radius: 40px; padding-left: 20px; padding-right: 20px; height: 50px;">
+                <p style="font-size: 16px; 
+                padding-left: 40px; 
+                padding-right: 40px; margin-top: 7px; 
+                color: #126fd6">
+                    Import
+                </p>
+            </button>
+        </div>
+        <div style="margin-top: 20px">
+            <mat-card>
+                <mat-card-content>
+                    <p>NEW FEATURE</p>
+                    <h2>Transcribe Zoom LIVE</h2>
+                    <p>Live Captions & Notes</p>
+                    <mat-divider></mat-divider>
+                    <p style="color: #126fd6; padding-top: 15px; text-align: center;">Try Otter Business for 1 month FREE</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card style="margin-top: 10px">
+                <mat-card-content>
+                    <p>ACCOUNT</p>
+                    <h2>Basic (Free)</h2>
+                    <p>Minutes reset in 8 days</p>
+                    <p style="color: #126fd6; padding-top: 15px; ">Get Otter Pro</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </div>
-
-<br>
-<br>
 <br>
